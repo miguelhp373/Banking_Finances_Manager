@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/LoginUserPage.css">
+    <title>Login</title>
+    <script>
+        if(localStorage.getItem('User') != ''){
+            window.location.href = 'App.html'
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <div class="items-align">
+        <div class="form-new-acount">
+           
+            <br>
+            <label for="user-form">Usuario:<br><input type="text" name="user-form" id="user-form" maxlength="12"></label>
+
+            <br><br>     
+            <label for="pass-form">Senha:<br><input type="password" name="pass-form" id="pass-form"></label>
+
+            <button id="signin">Entrar</button>
+        </div>
+        </div>
+    </div>
+    <script src="../Scripts/Login.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/NewUserPage.css">
+    <title>Criar Conta</title>
+    <script>
+        if(localStorage.getItem('User') != ''){
+            window.location.href = 'App.html'
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Criar Conta</h1>
+        <div class="items-align">
+            <div class="form-new-acount">
+
+                <br>
+                <label for="name-form-new">Nome:<br><input type="text" name="name-form-new" id="name-form-new"></label>
+
+                <br><br>
+
+                <label for="email-form-new">Email:<br><input type="email" name="email-form-new"
+                        id="email-form-new"></label>
+
+                <br><br>
+
+                <label for="user-form-new">Usuário:<br><input type="text" name="user-form-new" id="user-form-new"
+                        maxlength="12"></label>
+
+                <br><br>
+
+                <label for="date-form-new">Data de Nascimento:<br><input type="number" name="date-form-new"
+                        id="date-form-new"></label>
+
+                <br><br>
+
+                <label for="tel-form-new">Celular:<br><input type="tel" name="tel-form-new" id="tel-form-new"  maxlength="11"></label>
+
+                <br><br>
+
+                <label for="pass-form-new">Senha:<br><input type="password" name="pass-form-new"
+                        id="pass-form-new"></label>
+
+                <br><br>
+
+                <label for="passconfirm-form-new">Confirmar Senha:<br><input type="password" name="passconfirm-form-new"
+                        id="passconfirm-form-new"></label>
+
+
+
+                <button id="btn-create-acount">Criar Conta</button>
+            </div>
+        </div>
+    </div>
+    <script src="../Scripts/NewUser.js"></script>
+</body>
+
+</html>
