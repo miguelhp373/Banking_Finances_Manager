@@ -4,6 +4,7 @@ document.querySelector('#signin').onclick = function(){
 
     if((userSignin == '')||(passSignin == '')){
         alert('Os Campos Estão Vazios! Verifique e Tente Novamente')
+         
     }else if((userSignin == localStorage.getItem('User'))&&(passSignin == localStorage.getItem('Pass'))){
         window.location.href = '../Pages/App.html'
     }else{

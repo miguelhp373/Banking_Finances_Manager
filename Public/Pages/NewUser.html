@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="../Styles/NewUserPage.css">
     <title>Criar Conta</title>
     <script>
-        if(localStorage.getItem('User') != ''){
-            window.location.href = 'App.html'
+        if(!localStorage.getItem('User')){
+            alert('Seja Bem Vindo, Crie Uma Conta Agora Mesmo!')
+        }else{
+            alert('Já Existe Uma Conta, Caso Prossiga, Perdera todas suas Informações!')   
         }
     </script>
 </head>

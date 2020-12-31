@@ -2,55 +2,118 @@
 <html lang="PT-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banking Finances Manager</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking Finances Manager</title>
 
-    <link rel="stylesheet" href="Public/Styles/navbar.css">
-    <!--Material Design features-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="../Styles/navbar.css">
+  <link rel="stylesheet" href="../Styles/AppLanding.css">
+  <!--Material Design features-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="../Scripts/DarkMode.js"></script>
+  <script>
+    if (!localStorage.getItem('User')) {
+      window.location.href = '../../index.html'
+    }
+  </script>
 </head>
+<style>
+  .mdl-switch.is-checked .mdl-switch__track {
+    background: #21313a;
+  }
+
+  .mdl-switch.is-checked .mdl-switch__thumb {
+    background: #202e36;
+    left: 16px;
+    box-shadow: 0 3px 4px 0 rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+  }
+</style>
 
 <body>
-<!-- Uses a header that scrolls with the text, rather than staying
+  <!-- Uses a header that scrolls with the text, rather than staying
   locked at the top -->
   <div class="mdl-layout mdl-js-layout">
     <header class="mdl-layout__header mdl-layout__header--scroll">
-      <div class="mdl-layout__header-row" id="nav-bar-top">
+      <div class="mdl-layout__header-row nav-bar-top" id="">
         <!-- Title -->
-        <span class="mdl-layout-title"><div class="name-user"></div></span>
+        <span class="mdl-layout-title">
+          <div class="name-user"></div>
+        </span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation -->
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <span>Modo Escuro</span>
+          <span>&nbsp;</span>
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+            <input type="checkbox" id="switch-2" class="mdl-switch__input check-dark" onclick="active()">
+            <span class="mdl-switch__label"></span>
+          </label>
+          
+          
         </nav>
       </div>
     </header>
     <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title"><img src="Assets/Icon/Logo.svg" alt="" srcset=""></span>
+      <span class="mdl-layout-title">logo</span>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Receitas</a>
+        <a class="mdl-navigation__link" href="">Despesas</a>
+        <a class="mdl-navigation__link" href="">Calculadora</a>
+        <a class="mdl-navigation__link" href="">Minhas Informações</a>
       </nav>
     </div>
-    <main class="mdl-layout__content">
-      <div class="page-content"><!-- Your content goes here -->
-        
+    <main class="mdl-layout__content content-cards">
+      <div class="page-content">
+        <!-- Your content goes here -->
+        <div class="cards-app-link-show">
+          <div class="line-1">
+            <div class="money-saldo">
+              <h1>Saldo</h1>
+              <p>R$<span id="saldo-show">1,00000,00</span>
+              <div id="tt1" class="icon material-icons" style="cursor: pointer;">add</div>
+              </p>
+            </div>
+            <div class="money-despesas">
+              <h1>Despesas</h1>
+              <p>R$<span id="despesas-show">1,00000,00</span>
+              <div id="tt1" class="icon material-icons" style="cursor: pointer;">add</div>
+              </p>
+            </div>
+            <div class="money-planejamento">
+              <h1>Planejamento Mensal</h1>
+              <p>R$<span id="despesas-show">1,00000,00<div id="tt1" class="icon material-icons"
+                    style="cursor: pointer;">add</div></span></p>
+            </div>
+          </div>
+          <div class="line-2">
+            <div class="money-Receitas">
+              <h1>Receitas</h1>
+              <ul>
+                <li>R$ 100,00 - Troco</li>
+                <li>R$ 100,00 - Troco</li>
+                <li>R$ 100,00 - Troco</li>
+                <li>R$ 100,00 - Troco</li>
+              </ul>
+            </div>
+            <div class="img-landing-gif">
+
+            </div>
+          </div>
         </div>
+
+      </div>
     </main>
+    
   </div>
   <script>
     var nameuser = document.querySelector('.name-user');
     const usuario = localStorage.getItem('User')
-    nameuser.innerHTML = ('Olá '+ usuario);
+    nameuser.innerHTML = ('Olá ' + usuario);
   </script>
 </body>
+
 </html>

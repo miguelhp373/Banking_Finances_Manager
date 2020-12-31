@@ -7,20 +7,21 @@ document.querySelector('#btn-create-acount').onclick = function(){
     const pass = document.querySelector('#pass-form-new').value
     const passconf = document.querySelector('#passconfirm-form-new').value
 
-    let age = new Date().getFullYear - born; 
+    const age = new Date().getFullYear - born; 
     if((name == '')||(email == '')||(user == '')||(born == '')||(tel == '')||(pass == '')||(passconf == '')){
         alert('Impossivel Criar Conta, Os Campos Estão Vazios!')
     }if(age<17){
         alert('Não Foi Possivel Criar Uma Conta, Idade Não Permitida!')
     }if(pass != passconf){
         alert('As Senhas Não Conhecidem, Verifique e Tente Novamente!')
-        pass.focus();
+        document.querySelector('#passconfirm-form-new').focus();
+        document.querySelector('#passconfirm-form-new').style.backgroundColor = '#EA2027'
     }else{
-       var newName = localStorage.setItem('Name',name);
-       var newEmail = localStorage.setItem('Email',email);
-       var newUser = localStorage.setItem('User',user);
-       var newTel = localStorage.setItem('Tel',tel);
-       var newPass = localStorage.setItem('Pass',pass);
+       localStorage.setItem('Name',name);
+       localStorage.setItem('Email',email);
+       localStorage.setItem('User',user);
+       localStorage.setItem('Tel',tel);
+       localStorage.setItem('Pass',pass);
        window.location.href = "../Pages/Login.html" 
     }
 }
