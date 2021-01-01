@@ -8,12 +8,16 @@
 
   <link rel="stylesheet" href="../Styles/navbar.css">
   <link rel="stylesheet" href="../Styles/AppLanding.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!--Material Design features-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
   <script src="../Scripts/DarkMode.js"></script>
+  <script src="../Scripts/NewActions.js"></script>
   <script>
     if (!localStorage.getItem('User')) {
       window.location.href = '../../index.html'
@@ -52,8 +56,10 @@
             <input type="checkbox" id="switch-2" class="mdl-switch__input check-dark" onclick="active()">
             <span class="mdl-switch__label"></span>
           </label>
-          
-          
+          <span>Sair</span>
+          <span>&nbsp;</span>
+          <a href="#" style="color: #FFF;"><span class="exit-button-icon"><i class="fas fa-sign-out-alt"></i></span></a>
+
         </nav>
       </div>
     </header>
@@ -74,19 +80,28 @@
             <div class="money-saldo">
               <h1>Saldo</h1>
               <p>R$<span id="saldo-show">1,00000,00</span>
-              <div id="tt1" class="icon material-icons" style="cursor: pointer;">add</div>
+                <br><br>
+                <button style="background-color: transparent;border: none;color: #FFF;" onclick="addMoney()">
+                  <div id="tt1" class="icon material-icons add-button" style="cursor: pointer;">add</div>
+                </button>              
               </p>
             </div>
             <div class="money-despesas">
               <h1>Despesas</h1>
               <p>R$<span id="despesas-show">1,00000,00</span>
-              <div id="tt1" class="icon material-icons" style="cursor: pointer;">add</div>
-              </p>
+                <br><br>
+                <button style="background-color: transparent;border: none;color: #FFF;" onclick="NewDespesa()">
+                  <div id="tt1" class="icon material-icons add-button" style="cursor: pointer;">add</div>
+                </button>              </p>
             </div>
             <div class="money-planejamento">
               <h1>Planejamento Mensal</h1>
-              <p>R$<span id="despesas-show">1,00000,00<div id="tt1" class="icon material-icons"
-                    style="cursor: pointer;">add</div></span></p>
+              <p>R$<span id="despesas-show">1,00000,00</span>
+                <br><br>
+                <button style="background-color: transparent;border: none;color: #FFF;" onclick="MyPlanejament()">
+                  <div id="tt1" class="icon material-icons add-button" style="cursor: pointer;">add</div>
+                </button>
+              </p>
             </div>
           </div>
           <div class="line-2">
@@ -107,13 +122,25 @@
 
       </div>
     </main>
-    
   </div>
-  <script>
+
+<div class="modal-add-action"></div>
+
+<script>
     var nameuser = document.querySelector('.name-user');
     const usuario = localStorage.getItem('User')
     nameuser.innerHTML = ('Olá ' + usuario);
   </script>
-</body>
 
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+</body>
 </html>

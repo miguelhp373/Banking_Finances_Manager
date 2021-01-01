@@ -108,6 +108,32 @@
         width: 100%;
         height: auto;
     }
+
+    .exit-button-icon{
+      background-color: #20914f;
+      text-align: center;
+      height: 17px;
+      width:50px;
+      padding: 7px;
+      font-size: 27px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      border-radius: 17px;
+    }
+
+    .exit-button-icon:hover{
+        background-color: #1e8348;
+    }
+
+    .add-button{
+        font-size: 27px;
+    }
+
+    .add-button:hover{
+        border-radius: 100%;
+        background-color: #FFF;
+        opacity: 50%;
+        color: black;
+    }
 }
 
 
