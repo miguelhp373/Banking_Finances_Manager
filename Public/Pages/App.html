@@ -6,141 +6,230 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Banking Finances Manager</title>
 
+  <!--Styles-->
   <link rel="stylesheet" href="../Styles/navbar.css">
   <link rel="stylesheet" href="../Styles/AppLanding.css">
+  <link rel="stylesheet" href="../Styles/sidebar.css">
 
+  <!--External-->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <!--Material Design features-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
-  <script src="../Scripts/DarkMode.js"></script>
+  <script src="https://kit.fontawesome.com/bb41ae50aa.js" crossorigin="anonymous"></script>
+
+
+  <!--Scripts-->
+
   <script src="../Scripts/NewActions.js"></script>
-  <script>
+  <!--Chama os Modais De Acordo Com a Função Escolhida-->
+  <script>//Verifica se o Usuario Existe Senão Redireciona Para o Index
     if (!localStorage.getItem('User')) {
       window.location.href = '../../index.html'
     }
   </script>
+
+
 </head>
 <style>
-  .mdl-switch.is-checked .mdl-switch__track {
-    background: #21313a;
+  body {
+    background-color: #ecf0f1;
   }
 
-  .mdl-switch.is-checked .mdl-switch__thumb {
-    background: #202e36;
-    left: 16px;
-    box-shadow: 0 3px 4px 0 rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+  body.dark {
+    background-color: #131C21;
+  }
+
+  #DarkMode{
+    visibility: hidden;
   }
 </style>
 
 <body>
-  <!-- Uses a header that scrolls with the text, rather than staying
-  locked at the top -->
-  <div class="mdl-layout mdl-js-layout">
-    <header class="mdl-layout__header mdl-layout__header--scroll">
-      <div class="mdl-layout__header-row nav-bar-top" id="">
-        <!-- Title -->
-        <span class="mdl-layout-title">
-          <div class="name-user"></div>
-        </span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation -->
-        <nav class="mdl-navigation">
-          <span>Modo Escuro</span>
-          <span>&nbsp;</span>
-          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
-            <input type="checkbox" id="switch-2" class="mdl-switch__input check-dark" onclick="active()">
-            <span class="mdl-switch__label"></span>
+  <!--   -->
+  <nav class="header">
+
+    <div id="hamburguer">
+      <span id="nav-icon">
+        <i class="fa fas fas fa-bars" style="color: #FFFF;font-size: 20px;"></i>
+      </span>
+    </div><!-- /#hamburguer -->
+    <br>
+    <span class="name-user" style="color: #FFF;"></span>
+  </nav><!-- /header -->
+  <!-- End header -->
+
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li>
+          <a href="#" class="">
+            <i class="fa fas fa-arrow-circle-up" aria-hidden="true" style="color: #FFFF;font-size: 20px;"></i>
+            <span class="nav-label">Receitas</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="">
+            <i class="fa fas fa-arrow-circle-down" aria-hidden="true" style="color: #FFFF;font-size: 20px;"></i>
+            <span class="nav-label">Despesas</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="">
+            <i class="fa fas fas fa-calculator" aria-hidden="true" style="color: #FFFF;font-size: 20px;"></i>
+            <span class="nav-label">Calculadora</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="">
+            <i class="fa fas far fa-calendar" aria-hidden="true" style="color: #FFFF;font-size: 20px;"></i>
+            <span class="nav-label">Calendário</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="">
+            <i class="fa fas far fa-user" aria-hidden="true" style="color: #FFFF;font-size: 20px;"></i>
+            <span class="nav-label">Minha Conta</span>
+          </a>
+        </li>
+        <li>
+         <a  style="height: 66px;">
+          <input type='checkbox' id="DarkMode"/>
+          <label for="DarkMode">
+            <i class="fa fas far fa-moon" style="color: #FFFF;font-size: 20px;margin: -18px;"></i>
+            <span>&nbsp;</span>
+            <span class="nav-label">Modo Escuro</span>
           </label>
-          <span>Sair</span>
-          <span>&nbsp;</span>
-          <a href="#" style="color: #FFF;"><span class="exit-button-icon"><i class="fas fa-sign-out-alt"></i></span></a>
+         </a>
 
-        </nav>
-      </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">logo</span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Receitas</a>
-        <a class="mdl-navigation__link" href="">Despesas</a>
-        <a class="mdl-navigation__link" href="">Calculadora</a>
-        <a class="mdl-navigation__link" href="">Minhas Informações</a>
-      </nav>
+        </li>
+        <li>
+          <a href="#" class="">
+            <i class="fa fas far fas fa-door-open"></i>
+            <span class="nav-label">Sair</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <main class="mdl-layout__content content-cards">
-      <div class="page-content">
-        <!-- Your content goes here -->
-        <div class="cards-app-link-show">
-          <div class="line-1">
-            <div class="money-saldo">
-              <h1>Saldo</h1>
-              <p>R$<span id="saldo-show">1,00000,00</span>
-                <br><br>
-                <button style="background-color: transparent;border: none;color: #FFF;" onclick="addMoney()">
-                  <div id="tt1" class="icon material-icons add-button" style="cursor: pointer;">add</div>
-                </button>              
-              </p>
-            </div>
-            <div class="money-despesas">
-              <h1>Despesas</h1>
-              <p>R$<span id="despesas-show">1,00000,00</span>
-                <br><br>
-                <button style="background-color: transparent;border: none;color: #FFF;" onclick="NewDespesa()">
-                  <div id="tt1" class="icon material-icons add-button" style="cursor: pointer;">add</div>
-                </button>              </p>
-            </div>
-            <div class="money-planejamento">
-              <h1>Planejamento Mensal</h1>
-              <p>R$<span id="despesas-show">1,00000,00</span>
-                <br><br>
-                <button style="background-color: transparent;border: none;color: #FFF;" onclick="MyPlanejament()">
-                  <div id="tt1" class="icon material-icons add-button" style="cursor: pointer;">add</div>
-                </button>
-              </p>
-            </div>
-          </div>
-          <div class="line-2">
-            <div class="money-Receitas">
-              <h1>Receitas</h1>
-              <ul>
-                <li>R$ 100,00 - Troco</li>
-                <li>R$ 100,00 - Troco</li>
-                <li>R$ 100,00 - Troco</li>
-                <li>R$ 100,00 - Troco</li>
-              </ul>
-            </div>
-            <div class="img-landing-gif">
+    <!-- /#sidebar -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="cards-app-link-show">
+                <div class="line-1">
+                  <div class="money-saldo">
+                    <h1>Saldo &nbsp; <i class="fa fas fas fa-university" style="font-size: 30px;"></i></h1>
+                    <p>R$<span id="saldo-show">1,00000,00</span>
+                      <br><br>
+                      <button style="background-color: transparent;border: none;color: #FFF;" onclick="addMoney()">
+                        <div id="tt1" class="icon material-icons add-button" style="cursor: pointer;">add</div>
+                      </button>
+                    </p>
+                  </div>
+                  <div class="money-despesas">
+                    <h1>Despesas &nbsp; <i class="fa fas fas fas fa-arrow-circle-down" style="font-size: 30px;"></i>
+                    </h1>
+                    <p>R$<span id="despesas-show">1,00000,00</span>
+                      <br><br>
+                      <button style="background-color: transparent;border: none;color: #FFF;" onclick="NewDespesa()">
+                        <div id="tt1" class="icon material-icons add-button" style="cursor: pointer;">add</div>
+                      </button>
+                    </p>
+                  </div>
+                  <div class="money-planejamento">
+                    <h1>Planejamento Mensal &nbsp; <i class="fa fas fas fas far fa-calendar-alt"
+                        style="font-size: 30px;"></i></h1>
+                    <p>R$<span id="despesas-show">1,00000,00</span>
+                      <br><br>
+                      <button style="background-color: transparent;border: none;color: #FFF;" onclick="MyPlanejament()">
+                        <div id="tt1" class="icon material-icons add-button" style="cursor: pointer;">add</div>
+                      </button>
+                    </p>
+                  </div>
+                </div>
+                <div class="line-2">
+                  <div class="money-Receitas">
+                    <h1>Receitas &nbsp; <i class="fa fas fas fas fa-arrow-circle-up" style="font-size: 30px;"></i></h1>
+                    <ul>
+                      <li>R$ 100,00 - Troco</li>
+                      <li>R$ 100,00 - Troco</li>
+                      <li>R$ 100,00 - Troco</li>
+                      <li>R$ 100,00 - Troco</li>
+                    </ul>
+                  </div>
+                  <div class="img-landing-gif">
+
+                  </div>
+                </div>
+              </div>
 
             </div>
+            </main>
           </div>
+
         </div>
-
       </div>
-    </main>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
   </div>
 
-<div class="modal-add-action"></div>
 
-<script>
+  <div class="modal-add-action">
+    <!--Modal de Funcões do App-->
+  </div>
+
+
+  <!--User Name -->
+  <script>
     var nameuser = document.querySelector('.name-user');
     const usuario = localStorage.getItem('User')
-    nameuser.innerHTML = ('Olá ' + usuario);
+    nameuser.innerHTML = ('Olá ' + usuario); //Mostra O Nome do Usuario Na Página
+  </script>
+  <!--end -->
+
+  <!--DarkMode-->
+  <script src="../Scripts/DarkMode.js"></script>
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!--SideBar-->
+  <script src='https://use.fontawesome.com/aea217bbf6.js'></script>
+  <script>
+    $('#hamburguer').click(function (e) {
+      e.preventDefault();
+      $('ul.sub-menu').removeClass('in');
+      $("#nav-icon").toggleClass('open');
+      $("#wrapper").toggleClass("toggled");
+    });
+
+    $('.sidebar-nav a[data-toggle="collapse"]').on('click', function () {
+      $("#nav-icon").addClass('open');
+      $("#wrapper").addClass("toggled");
+    });
   </script>
 
-          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-          crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-          crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-          crossorigin="anonymous"></script>
 </body>
+
 </html>

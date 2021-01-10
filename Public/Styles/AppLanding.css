@@ -134,6 +134,53 @@
         opacity: 50%;
         color: black;
     }
+
+    input[type=number]::-webkit-inner-spin-button { 
+        -webkit-appearance: none;
+        
+    }
+    input[type=number] { 
+       -moz-appearance: textfield;
+       appearance: textfield;
+    
+    }
+
+    .new-input{
+        border-radius: 17px;
+        border: 1px solid #707070;
+        padding: 8px;
+    }
+
+    .new-input:focus{
+        outline: 0;
+    }
+
+    .modal-header{
+        color: #FFFF;
+    }
+
+    .modal-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #add-money-categorias{
+        border-radius:30px;
+        height: 35px;
+    }
+
+    #add-money-categorias:focus{
+        outline: 0;
+    }
+
+    .modal-contentl{
+        border-radius: 30px;
+    }
+
+    .select-categorias{
+        padding: 8px;
+    }
 }
 
 
@@ -245,6 +292,46 @@
         width: 100%;
         height: auto;
     }
+
+    input[type=number]::-webkit-inner-spin-button { 
+        -webkit-appearance: none;
+        
+    }
+    input[type=number] { 
+       -moz-appearance: textfield;
+       appearance: textfield;
+    
+    }
+
+    .new-input{
+        border-radius: 17px;
+        border: 1px solid #707070;
+        padding: 8px;
+    }
+
+    .new-input:focus{
+        outline: 0;
+    }
+
+    .modal-header{
+        color: #FFFF;
+    }
+
+    .modal-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #add-money-categorias{
+        border-radius:30px;
+        height: 35px;
+    }
+
+    #add-money-categorias:focus{
+        outline: 0;
+    }
+    
 }
 
 
