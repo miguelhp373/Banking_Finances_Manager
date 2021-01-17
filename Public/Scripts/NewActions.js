@@ -8,19 +8,19 @@ function addMoney(){
             </div>
             <div class="modal-body">
                 <label for='new-input'>Valor da Receita:</label>
-                <input class ='new-input' type='number' placeholder='R$'/>
+                <input class ='new-input' id='receita-money-input' type='number' placeholder='R$'/>
                 <br>
-                <input class = 'new-input' type='text' placeholder='Descrição'/>
+                <input class = 'new-input' id='descriction-receita' type='text' placeholder='Descrição'/>
                 <br>
                 <select id='add-money-categorias' class='select-categorias'>
                 <option>Categoria</option>
-                <option value='0'>Salário</option>
-                <option value='1'>Troco</option>
-                <option value='2'>Econômias</option>
+                <option value='Salário'>Salário</option>
+                <option value='Troco'>Troco</option>
+                <option value='Econômias'>Econômias</option>
                 </select>
             </div>
             <div class="modal-footer">
-               <button type="button" class="btn btn-success">Confirmar</button>
+               <button type="button" class="btn btn-success" onclick="newMoney()">Confirmar</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
@@ -55,7 +55,7 @@ function NewDespesa(){
                 </select>
             </div>
             <div class="modal-footer">
-               <button type="button" class="btn btn-success">Confirmar</button>
+               <button type="button" class="btn btn-success" onclick="newDespesa()">Confirmar</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
@@ -81,7 +81,7 @@ function MyPlanejament(){
                 <input class ='new-input' type='number' placeholder='R$'/>
             </div>
             <div class="modal-footer">
-               <button type="button" class="btn btn-success">Confirmar</button>
+               <button type="button" class="btn btn-success" onclick="newPlanejamento()">Confirmar</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
             </div>
         </div>

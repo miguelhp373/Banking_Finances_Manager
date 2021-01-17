@@ -23,9 +23,8 @@
   <script src="https://kit.fontawesome.com/bb41ae50aa.js" crossorigin="anonymous"></script>
 
 
-  <!--Scripts-->
 
-  <script src="../Scripts/NewActions.js"></script>
+
   <!--Chama os Modais De Acordo Com a Função Escolhida-->
   <script>//Verifica se o Usuario Existe Senão Redireciona Para o Index
     if (!localStorage.getItem('User')) {
@@ -44,7 +43,7 @@
     background-color: #131C21;
   }
 
-  #DarkMode{
+  #DarkMode {
     visibility: hidden;
   }
 </style>
@@ -98,14 +97,14 @@
           </a>
         </li>
         <li>
-         <a  style="height: 66px;">
-          <input type='checkbox' id="DarkMode"/>
-          <label for="DarkMode">
-            <i class="fa fas far fa-moon" style="color: #FFFF;font-size: 20px;margin: -18px;"></i>
-            <span>&nbsp;</span>
-            <span class="nav-label">Modo Escuro</span>
-          </label>
-         </a>
+          <a style="height: 66px;cursor: pointer;">
+            <input type='checkbox' id="DarkMode" />
+            <label for="DarkMode" style="cursor: pointer;">
+              <i class="fa fas far fa-moon" style="color: #FFFF;font-size: 20px;margin: -18px;"></i>
+              <span>&nbsp;</span>
+              <span class="nav-label">Modo Escuro</span>
+            </label>
+          </a>
 
         </li>
         <li>
@@ -129,7 +128,11 @@
                 <div class="line-1">
                   <div class="money-saldo">
                     <h1>Saldo &nbsp; <i class="fa fas fas fa-university" style="font-size: 30px;"></i></h1>
-                    <p>R$<span id="saldo-show">1,00000,00</span>
+                    <p>
+                      R$ &nbsp;
+                      <span id="saldo-show" class="saldo-show">
+                        <!--Mostra o Saldo-->
+                      </span>
                       <br><br>
                       <button style="background-color: transparent;border: none;color: #FFF;" onclick="addMoney()">
                         <div id="tt1" class="icon material-icons add-button" style="cursor: pointer;">add</div>
@@ -190,6 +193,13 @@
     <!--Modal de Funcões do App-->
   </div>
 
+
+  <!--Scripts-->
+
+  <script src="../Scripts/NewActions.js"></script>
+
+  <!--Actions-->
+  <script src="../Scripts/Actions.js"></script>
 
   <!--User Name -->
   <script>
