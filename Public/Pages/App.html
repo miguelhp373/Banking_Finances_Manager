@@ -27,7 +27,7 @@
 
   <!--Chama os Modais De Acordo Com a Função Escolhida-->
   <script>//Verifica se o Usuario Existe Senão Redireciona Para o Index
-    if (!localStorage.getItem('User')) {
+    if (!localStorage.getItem('User')||(localStorage.getItem('User') == '')) {
       window.location.href = '../../index.html'
     }
   </script>
@@ -108,7 +108,7 @@
 
         </li>
         <li>
-          <a href="#" class="">
+          <a href="#" class="" onclick="logout()">
             <i class="fa fas far fas fa-door-open"></i>
             <span class="nav-label">Sair</span>
           </a>
@@ -200,6 +200,9 @@
 
   <!--Actions-->
   <script src="../Scripts/Actions.js"></script>
+
+  <!--Logout-->
+  <script src="../Scripts/Logout.js"></script>
 
   <!--User Name -->
   <script>
